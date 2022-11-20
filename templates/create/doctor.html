@@ -1,0 +1,19 @@
+{% extends 'main.html' %} {% block content %}
+
+<div class="container">
+  <div class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+    <h1>Doctor Create</h1>
+  </div>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <select name="user_email" id="user_email">
+      {% for user in users%}
+      <option value="{{user}}">{{user}}</option>
+      {% endfor %}
+    </select>
+    {{form.as_p}}
+    <button type="submit">Create</button>
+  </form>
+</div>
+
+{% endblock %}
